@@ -96,7 +96,11 @@
 
     L.control.layers(baseMaps).addTo(map);
 
+    // Add a marker to the map
+
     var marker = L.marker([29.6516, -82.3248]).addTo(map);
+
+    // Add a circle marker to the map
 
     var circle = L.circle([29.6516, -82.3248], {
     color: 'green',
@@ -104,6 +108,19 @@
     fillOpacity: 0.5,
     radius: 50000
 }).addTo(map);
+
+// Add a polygon to the map
+
+var polygon = L.polygon([
+    [29.6516, -82.3248],
+    [29.7516, -82.4248],
+    [29.8516, -82.5248],
+    [29.9516, -82.6248],
+    [30.0516, -82.7248],
+    [30.1516, -82.8248]
+]).addTo(map);
+
+
 
     </script>
 
