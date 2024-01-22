@@ -89,23 +89,6 @@
 
 //i should be able to erase whats below this line to get back the map i had before
 
-    var OpenStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
-
-// Initialize the map with OpenStreetMap as the base map
-var map = L.map('map', {
-    center: [25.0000, -85.0000],
-    zoom: 6,
-    layers: [OpenStreetMap]
-});
-
-// Add your ArcGIS layer
-var arcgisLayer = L.esri.featureLayer({
-    url: 'URL_OF_YOUR_ARCGIS_LAYER'
-}).addTo(map);
-
 
 
 //and anything above this line to get back what i had before
