@@ -44,43 +44,27 @@
 
 <body>
 
-<div id="map"></div> <!--div means "this is where the map is supposed to go"-->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.12.0/leaflet-providers.min.js"></script>
-<script src="https://unpkg.com/leaflet-control-layers-expanded"></script>
-
-<script>                                     
-/*any variable or code must be inside a script bracket*/
-
-// Define multiple base maps
-var OpenStreetMap = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-});
-
-var BOEM = L.tileLayer('URL_OF_BOEM_MAP', {
-    maxZoom: 19,
-    attribution: 'Map data &copy; <a href="https://www.boem.gov/">BOEM</a>'
-});
-
-// Initialize the map with OpenStreetMap as the default base map
-var map = L.map('map', {
-    center: [25.0000, -85.0000],
-    zoom: 6,
-    layers: [OpenStreetMap]
-});
-
-// Add a layer switcher control
-var baseMaps = {
-    "OpenStreetMap": OpenStreetMap,
-    "BOEM": BOEM
-};
-
-L.control.layers(baseMaps).addTo(map);
-
-</script>
-
-</body>
+    <div id="map"></div> <!--div means "this is where the map is supposed to go"-->
+    
+    <script>
+    /*any variable or code must be inside a script bracket*/
+    
+    // Define OpenStreetMap base map
+    var OpenStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    });
+    
+    // Initialize the map with OpenStreetMap as the base map
+    var map = L.map('map', {
+        center: [25.0000, -85.0000],
+        zoom: 6,
+        layers: [OpenStreetMap]
+    });
+    
+    </script>
+    
+    </body>
 
 
 
