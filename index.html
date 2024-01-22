@@ -26,6 +26,9 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.12.0/leaflet-providers.min.js"></script>
+
 <!--this above "set" is the external leaflet javascript library file-->
 
 
@@ -46,21 +49,64 @@
 
     <div id="map"></div> <!--div means "this is where the map is supposed to go"-->
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.12.0/leaflet-providers.min.js"></script>
+
     <script>
-    /*any variable or code must be inside a script bracket*/
-    
-    // Define OpenStreetMap base map
+    // Define multiple base maps
     var OpenStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
-    
-    // Initialize the map with OpenStreetMap as the base map
+
+    var ASTER = L.tileLayer('URL_OF_ASTER_MAP', {
+        maxZoom: 19,
+        attribution: 'ASTER Satellite Imagery'
+    });
+
+    var CERES = L.tileLayer('URL_OF_CERES_MAP', {
+        maxZoom: 19,
+        attribution: 'CERES Satellite Imagery'
+    });
+
+    var MISR = L.tileLayer('URL_OF_MISR_MAP', {
+        maxZoom: 19,
+        attribution: 'MISR Satellite Imagery'
+    });
+
+    var MODIS = L.tileLayer('URL_OF_MODIS_MAP', {
+        maxZoom: 19,
+        attribution: 'MODIS Satellite Imagery'
+    });
+
+    var MOPITT = L.tileLayer('URL_OF_MOPITT_MAP', {
+        maxZoom: 19,
+        attribution: 'MOPITT Satellite Imagery'
+    });
+
+    // Initialize the map with OpenStreetMap as the default base map
     var map = L.map('map', {
         center: [25.0000, -85.0000],
         zoom: 6,
         layers: [OpenStreetMap]
     });
+
+    // Add a layer switcher control
+    var baseMaps = {
+        "OpenStreetMap": OpenStreetMap,
+        "ASTER": ASTER,
+        "CERES": CERES,
+        "MISR": MISR,
+        "MODIS": MODIS,
+        "MOPITT": MOPITT
+    };
+
+    L.control.layers(baseMaps).addTo(map);
+
+    </script>
+
+    </body>
+
+    </html>
     
     </script>
     
