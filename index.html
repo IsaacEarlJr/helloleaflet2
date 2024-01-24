@@ -138,11 +138,16 @@ var popup = L.popup()
     .openOn(map);
 
 
-    function onMapClick(e) {
-    alert("You clicked the map at " + e.latlng);
+    var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
 }
 
-map.on('click', onMapClick);   
+map.on('click', onMapClick);  
 
 
     </script>
