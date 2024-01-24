@@ -102,19 +102,12 @@
 
     // Add a circle marker to the map
 
-    // Your existing code...
-
-    // Add a rectangle to the map
-    var rectangle = L.rectangle([
-        [27.8006, -97.3964],
-        [29.3749, -82.4572]
-    ], {
-        color: 'green',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(map);
-
-    // Your existing code...
+    var circle = L.circle([25.5, -93.3248], {
+    color: 'green',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500000
+}).addTo(map);
 
 
 
