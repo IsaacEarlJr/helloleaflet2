@@ -82,9 +82,6 @@ var CloudsLayer = L.tileLayer('https://tile.openweathermap.org/map/{layer}/{z}/{
     attribution: 'Map data &copy; <a href="https://www.openweathermap.org/">OpenWeatherMap</a>',
     opacity: 0.5
 });
-// Add the cloud imagery layer to the layer switcher control
-baseMaps["Cloud Imagery"] = CloudsLayer;
-
 
 
 
@@ -98,7 +95,8 @@ baseMaps["Cloud Imagery"] = CloudsLayer;
     // Add a layer switcher control
     var baseMaps = {
         "OpenStreetMap": OpenStreetMap,
-        "Esri WorldImagery": Esri_WorldImagery
+        "Esri WorldImagery": Esri_WorldImagery,
+        "Cloud Imagery": CloudsLayer
 
     };
 
