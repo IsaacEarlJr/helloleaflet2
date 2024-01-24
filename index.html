@@ -263,6 +263,18 @@ var polygonLayer0 = L.esri.featureLayer({
     // Add the layer to the map
     
 
+// Add layer control
+var overlayMaps = {
+        "Layer 0": polygonLayer0,
+        "Layer 1": polygonLayer1,
+        "Layer 2": polygonLayer2,
+        "Layer 3": polygonLayer3,
+        "Layer 4": polygonLayer4
+    };
+
+    L.control.layers(null, overlayMaps).addTo(map);
+
+
 
     </script>
 
