@@ -98,9 +98,14 @@
     var baseMaps = {
         "OpenStreetMap": OpenStreetMap,
         "Esri WorldImagery": Esri_WorldImagery,
-
-
     };
+
+
+
+    var overlayMaps = {
+        "Feature Layer": featureLayer
+    };
+
 
 //i should be able to erase whats below this line to get back the map i had before
 
@@ -113,7 +118,7 @@
 
 
     L.control.layers(baseMaps).addTo(map);
-
+    L.control.layers(baseMaps, overlayMaps).addTo(map);
     // Add a marker to the map
 
 
