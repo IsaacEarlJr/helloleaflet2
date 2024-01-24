@@ -169,6 +169,18 @@
 
 
 
+// Add a polygon to the map
+
+var polygon = L.polygon([
+    [28.3516, -93.1548],
+    [28.3516, -93.2548],
+    [28.4516, -93.2548],
+    [28.4516, -93.3548],
+    [28.5516, -93.3548],
+    [28.5516, -93.1548]
+]);
+
+
 marker.bindPopup("<b>Hello User!</b><br>I am here.. Currently here collecting data.").openPopup();
 circle.bindPopup("This is the study area.");
 polygon.bindPopup("I am WEA Phase 2 Option J");
