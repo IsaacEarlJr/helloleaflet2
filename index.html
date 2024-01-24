@@ -102,9 +102,7 @@
 
 
 
-    var overlayMaps = {
-        "Feature Layer": featureLayer
-    };
+
 
 
 //i should be able to erase whats below this line to get back the map i had before
@@ -117,7 +115,7 @@
 //and anything above this line to get back what i had before
 
 
-   
+    L.control.layers(baseMaps).addTo(map);
     L.control.layers(baseMaps, overlayMaps).addTo(map);
     // Add a marker to the map
 
