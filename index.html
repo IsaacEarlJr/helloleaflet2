@@ -265,11 +265,11 @@ var polygonLayer0 = L.esri.featureLayer({
 
 // Add layer control
 var overlayMaps = {
-        "Layer 0": polygonLayer0,
-        "Layer 1": polygonLayer1,
-        "Layer 2": polygonLayer2,
-        "Layer 3": polygonLayer3,
-        "Layer 4": polygonLayer4
+        "Recommended WEAs Likely Clear of Flight Paths": polygonLayer0,
+        "Most Likely Flight Paths": polygonLayer1,
+        "Recommended WEAs in Most Likely Flight Paths ": polygonLayer2,
+        "Total WEAs as of 12/31/2023": polygonLayer3,
+        "Bird Sighting Hot Spots": polygonLayer4
     };
 
     L.control.layers(null, overlayMaps, { position: 'topright', collapsed: false }).addTo(map);
