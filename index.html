@@ -105,26 +105,26 @@
 //i should be able to erase whats below this line to get back the map i had before
 
 
-// Create the feature layers
+// Create and add the feature layers to the map
 var layer0 = L.esri.featureLayer({
     url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/0"
-});
+}).addTo(map);
 
 var layer1 = L.esri.featureLayer({
     url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/1"
-});
+}).addTo(map);
 
 var layer2 = L.esri.featureLayer({
     url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/2"
-});
+}).addTo(map);
 
 var layer3 = L.esri.featureLayer({
     url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/3"
-});
+}).addTo(map);
 
 var layer4 = L.esri.featureLayer({
     url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/4"
-});
+}).addTo(map);
 
 // Add the layers to the layer control
 var overlayMaps = {
