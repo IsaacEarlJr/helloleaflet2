@@ -21,6 +21,9 @@
      <!--this above "set" is the external leaflet stylesheet-->
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.css"/>
+<!--this is leafletweather from mwasil-->
+
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -29,6 +32,10 @@
 <!--this above "set" is the external leaflet javascript library file-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.12.0/leaflet-providers.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>
 
 
 <!-- above; i had to add this library in order to add a satelittle layer-->
@@ -74,7 +81,16 @@
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
-
+    L.control.rainviewer({ 
+        position: 'bottomleft',
+        nextButtonText: '>',
+        playStopButtonText: 'Play/Stop',
+        prevButtonText: '<',
+        positionSliderLabelText: "Hour:",
+        opacitySliderLabelText: "Opacity:",
+        animationInterval: 500,
+        opacity: 0.5
+    }).addTo(map);
 
     // Initialize the map with OpenStreetMap as the base map
     var map = L.map('map', {
