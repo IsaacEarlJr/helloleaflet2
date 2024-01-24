@@ -133,6 +133,18 @@
 
 
 
+    <script>
+    // Create the feature layer
+    var polygonLayer = L.esri.featureLayer({
+        url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/0"
+    });
+
+    // Add the layer to the map
+    polygonLayer.addTo(map);
+</script>
+
+
+
     var marker = L.marker([29.6516, -82.3248]).addTo(map);
 
     // Add a circle marker to the map
