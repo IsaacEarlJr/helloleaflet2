@@ -108,42 +108,6 @@
 
 
 
-// Create the feature layers
-var layer0 = L.esri.featureLayer({
-    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/0"
-});
-
-var layer1 = L.esri.featureLayer({
-    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/1"
-});
-
-var layer2 = L.esri.featureLayer({
-    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/2"
-});
-
-var layer3 = L.esri.featureLayer({
-    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/3"
-});
-
-var layer4 = L.esri.featureLayer({
-    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/4"
-});
-
-// Add the layers to the layer control
-var overlayMaps = {
-    "Layer 0": layer0,
-    "Layer 1": layer1,
-    "Layer 2": layer2,
-    "Layer 3": layer3,
-    "Layer 4": layer4
-};
-
-// Add the baseMaps and overlayMaps to the layer control
-L.control.layers(baseMaps, overlayMaps).addTo(map);
-
-
-
-
 
 //and anything above this line to get back what i had before
 
