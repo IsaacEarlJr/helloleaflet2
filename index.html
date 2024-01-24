@@ -31,6 +31,10 @@
 
 <!--this above "set" is the external leaflet javascript library file-->
 
+
+<script src="https://unpkg.com/esri-leaflet"></script> <!--this is ArcGISpacakge-->
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.12.0/leaflet-providers.min.js"></script>
 
 
@@ -38,7 +42,8 @@
 <script src="https://cdn.jsdelivr.net/gh/mwasil/Leaflet.Rainviewer/leaflet.rainviewer.js"></script>  <!--this is leafletweather from mwasil-->
 
 
-<script src="https://unpkg.com/esri-leaflet" defer></script>  <!-- this is ArcGISpacakge-->
+
+ <!-- this is ArcGISpacakge-->
 
 <!-- above; i had to add this library in order to add a satelittle layer-->
 
@@ -220,7 +225,13 @@ myPositionMarker.on("click", function() {
     fx.run(myPositionMarker._icon, pos, 0.3);
 });
 
+var polygonLayer = L.esri.featureLayer({
+        url: "YOUR_ARCGIS_URL"
+    });
 
+    // Add the layer to the map
+    polygonLayer.addTo(map);
+    
 
     </script>
 
