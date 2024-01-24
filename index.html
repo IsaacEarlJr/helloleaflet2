@@ -81,16 +81,7 @@
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
-    L.control.rainviewer({ 
-        position: 'bottomleft',
-        nextButtonText: '>',
-        playStopButtonText: 'Play/Stop',
-        prevButtonText: '<',
-        positionSliderLabelText: "Hour:",
-        opacitySliderLabelText: "Opacity:",
-        animationInterval: 500,
-        opacity: 0.5
-    }).addTo(map);
+    
 
     // Initialize the map with OpenStreetMap as the base map
     var map = L.map('map', {
