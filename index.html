@@ -77,15 +77,6 @@
 
 
 
-// Add a cloud imagery layer to the map
-var CloudsLayer = L.tileLayer('https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={f6d077d600a5c4a7024d65fe57232888}', {
-    layer: 'clouds_new', // This is the layer for cloud imagery
-    apiKey: 'your_openweathermap_api_key', // Replace this with your OpenWeatherMap API key
-    attribution: 'Map data &copy; <a href="https://www.openweathermap.org/">OpenWeatherMap</a>',
-    opacity: 0.5
-});
-// Add the cloud imagery layer to the layer switcher control
-baseMaps["Cloud Imagery"] = CloudsLayer;
 
 
 
