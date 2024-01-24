@@ -105,7 +105,16 @@
 //i should be able to erase whats below this line to get back the map i had before
 
 
+  // Initialize the map
+  var map = L.map('map').setView([25.0000, -85.0000], 6);
 
+// Create the feature layer
+var featureLayer = L.esri.featureLayer({
+    url: "Yhttps://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/0"
+});
+
+// Add the layer to the map
+featureLayer.addTo(map);
 
 
 
