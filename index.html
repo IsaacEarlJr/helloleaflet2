@@ -110,6 +110,15 @@
 }).addTo(map);
 
 
+// Add a weather layer to the map
+var weatherLayer = L.tileLayer('https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={apiKey}', {
+    layer: 'temp_new', // Change this to the type of weather data you want to display
+    apiKey: 'your_openweathermap_api_key', // Replace this with your OpenWeatherMap API key
+    attribution: 'Map data &copy; <a href="https://www.openweathermap.org/">OpenWeatherMap</a>',
+    opacity: 0.5
+}).addTo(map);
+
+
 
 //This code will add an oval to the map. The scale transformation scales the circle horizontally by 60% to create an oval-like shape. The coordinates and radius are arbitrary and you may need to adjust them to fit your specific needs. Note that this is a workaround and may not work perfectly in all situations.
 
