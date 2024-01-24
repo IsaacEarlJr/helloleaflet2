@@ -62,6 +62,21 @@
 /*this above is the media query for the map*/
 
 
+
+
+
+/*adding colord dots to the layer control*/
+
+        .layer-control-dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+
+
 </style>         <!--this action closes the stylesheet editior options-->
 
 
@@ -265,17 +280,21 @@ var polygonLayer0 = L.esri.featureLayer({
 
 // Add layer control
 var overlayMaps = {
-        "Recommended WEAs Likely Clear of Flight Paths": polygonLayer0,
-        "Most Likely Flight Paths": polygonLayer1,
-        "Recommended WEAs in Most Likely Flight Paths": polygonLayer2,
-        "Total WEAs as of 12/31/2023": polygonLayer3,
-        "Bird Sighting Hot Spots": polygonLayer4
+        "<span class='layer-control-dot' style='background-color: #ff0000;'></span>Recommended WEAs Likely Clear of Flight Paths": polygonLayer0,
+        "<span class='layer-control-dot' style='background-color: #00ff00;'></span>Most Likely Flight Paths": polygonLayer1,
+        "<span class='layer-control-dot' style='background-color: #0000ff;'></span>Recommended WEAs in Most Likely Flight Paths": polygonLayer2,
+        "<span class='layer-control-dot' style='background-color: #ffff00;'></span>Total WEAs as of 12/31/2023": polygonLayer3,
+        "<span class='layer-control-dot' style='background-color: #ff00ff;'></span>Bird Sighting Hot Spots": polygonLayer4
     };
 
-    L.control.layers(null, overlayMaps, { position: 'topright', collapsed: false }).addTo(map);
+    var layerControl = L.control.layers(null, overlayMaps, { position: 'topright', collapsed: false }).addTo(map);
 
-
-
+    // Add the colors to the layer control labels
+    var layerControlContainer = layerControl.getContainer();
+    var labels = layerControlContainer.querySelectorAll(".leaflet-control-layers-selector + span");
+    for (var i = 0; i < labels.length; i++) {
+        labels[i].innerHTML = overlayMaps[labels[i].textContent];
+    }
     </script>
 
     </body>
