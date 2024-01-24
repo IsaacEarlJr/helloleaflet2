@@ -74,6 +74,22 @@
         attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
     });
 
+
+
+
+// Add a cloud imagery layer to the map
+var CloudsLayer = L.tileLayer('https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={apiKey}', {
+    layer: 'clouds_new', // This is the layer for cloud imagery
+    apiKey: 'your_openweathermap_api_key', // Replace this with your OpenWeatherMap API key
+    attribution: 'Map data &copy; <a href="https://www.openweathermap.org/">OpenWeatherMap</a>',
+    opacity: 0.5
+});
+// Add the cloud imagery layer to the layer switcher control
+baseMaps["Cloud Imagery"] = CloudsLayer;
+
+
+
+
     // Initialize the map with OpenStreetMap as the base map
     var map = L.map('map', {
         center: [25.0000, -85.0000],
@@ -85,6 +101,7 @@
     var baseMaps = {
         "OpenStreetMap": OpenStreetMap,
         "Esri WorldImagery": Esri_WorldImagery
+
     };
 
 //i should be able to erase whats below this line to get back the map i had before
@@ -169,20 +186,6 @@ myPositionMarker.on("click", function() {
     fx.run(myPositionMarker._icon, pos, 0.3);
 });
 
-// Add a weather layer to the map
-var weatherLayer = L.tileLayer('https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={apiKey}', {
-    layer: 'temp_new', // Change this to the type of weather data you want to display
-    apiKey: 'your_openweathermap_api_key', // Replace this with your OpenWeatherMap API key
-    attribution: 'Map data &copy; <a href="https://www.openweathermap.org/">OpenWeatherMap</a>',
-    opacity: 0.5
-});
-
-// Add a control to the map that allows you to toggle the weather layer
-var overlayMaps = {
-    "Weather": weatherLayer
-};
-
-L.control.layers(null, overlayMaps).addTo(map);
 
     </script>
 
