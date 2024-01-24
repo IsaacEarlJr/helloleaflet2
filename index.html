@@ -143,17 +143,7 @@
 
 
 
-// Create the feature layer
-var polygonLayer = L.esri.featureLayer({
-    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/0"
-});
 
-// Add the layer to the layer control
-var overlayMaps = {
-    "Polygon Layer": polygonLayer
-};
-
-L.control.layers(baseMaps, overlayMaps).addTo(map);
 
 //This code will add an oval to the map. The scale transformation scales the circle horizontally by 60% to create an oval-like shape. The coordinates and radius are arbitrary and you may need to adjust them to fit your specific needs. Note that this is a workaround and may not work perfectly in all situations.
 
