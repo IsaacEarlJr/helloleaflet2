@@ -102,7 +102,7 @@
 
     // Add a circle marker to the map
 
-    var oval = L.circle([25.5, -93.3248], {
+    var circle = L.circle([25.5, -93.3248], {
     color: 'green',
     fillColor: '#f03',
     fillOpacity: 0.5,
@@ -110,7 +110,7 @@
 }).addTo(map);
 
 
-oval._path.setAttribute('transform','scale(1,0.6)');
+circle._path.setAttribute('transform','scale(1,0.6)');
 
 //This code will add an oval to the map. The scale transformation scales the circle horizontally by 60% to create an oval-like shape. The coordinates and radius are arbitrary and you may need to adjust them to fit your specific needs. Note that this is a workaround and may not work perfectly in all situations.
 
@@ -128,7 +128,7 @@ var polygon = L.polygon([
 
 
 marker.bindPopup("<b>Hello User!</b><br>I am here.. Currently here collecting data.").openPopup();
-oval.bindPopup("This is the study area.");
+circle.bindPopup("This is the study area.");
 polygon.bindPopup("I am WEA Phase 2 Option J");
 
 
