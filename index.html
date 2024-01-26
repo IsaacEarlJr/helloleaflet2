@@ -163,7 +163,16 @@
 
 #collapse-button {
     position: absolute;
-    left: 0;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* White */
+    font-size: 1.2em;
+    margin-right: 10px;
+    margin-top: 10px;
+    z-index: 1001;
 }
 
 #content-panel.closed {
@@ -183,12 +192,6 @@
 
 <body>
 
-
-    <!-- Content panel -->
-    <div id="content-panel">
-        <!-- Content panel content... -->
-    </div>
-
     <div id="map"></div> <!--div means "this is where the map is supposed to go"-->
     
 
@@ -203,7 +206,10 @@
     <!-- Collapse button -->
     <button id="collapse-button">Collapse</button>
     
-
+    <!-- Content panel -->
+    <div id="content-panel">
+        <!-- Content panel content... -->
+    </div>
 
 
 
