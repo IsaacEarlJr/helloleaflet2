@@ -324,7 +324,6 @@
 
 
 // Create the rainviewer control
-// Create the rainviewer control
 var rainviewerControl = L.control.rainviewer({ 
     position: 'topleft',
     nextButtonText: '>',
@@ -336,18 +335,15 @@ var rainviewerControl = L.control.rainviewer({
     opacity: 0.5
 }).addTo(map);
 
-// Create the OpenStreetMap control
-var OpenStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    position: 'topright', // Adjust this value
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+// Wait for the control to be added to the map
+setTimeout(function() {
+    // Get the control's container
+    var container = rainviewerControl.getContainer();
 
-// Create the Esri WorldImagery control
-var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    position: 'topright', // Adjust this value
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-}).addTo(map);
+    // Adjust the position of the control
+    container.style.position = 'relative';
+    container.style.top = '50px'; // Adjust this value as needed
+}, 0);
 
 
 
