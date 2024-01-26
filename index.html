@@ -303,19 +303,28 @@
 
 
 // Create the baseMaps control
-var layerControl = L.control.layers(baseMaps).addTo(map);
+// Create a new map instance for the content panel
+var panelMap = L.map('content-panel', {
+    center: [0, 0],
+    zoom: 0,
+    zoomControl: false,
+    attributionControl: false
+});
 
-// Wait for the control to be added to the map
-setTimeout(function() {
-    // Get the control's container
-    var container = layerControl.getContainer();
+// Create the baseMaps control
+var layerControl = L.control.layers(baseMaps).addTo(panelMap);
 
-    // Remove the control from the map
-    map.removeControl(layerControl);
-
-    // Add the control's container to the content panel
-    document.getElementById('content-panel').appendChild(container);
-}, 0);
+// Create the rainviewer control
+var rainviewerControl = L.control.rainviewer({ 
+    position: 'topright',
+    nextButtonText: '>',
+    playStopButtonText: 'Play/Stop',
+    prevButtonText: '<',
+    positionSliderLabelText: "Hour:",
+    opacitySliderLabelText: "Opacity:",
+    animationInterval: 500,
+    opacity: 0.5
+}).addTo(panelMap);
     
 
     L.control.zoom({
