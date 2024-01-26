@@ -302,29 +302,7 @@
 
 
 
-// Create the baseMaps control
-// Create a new map instance for the content panel
-var panelMap = L.map('content-panel', {
-    center: [0, 0],
-    zoom: 0,
-    zoomControl: false,
-    attributionControl: false
-});
 
-// Create the baseMaps control
-var layerControl = L.control.layers(baseMaps).addTo(panelMap);
-
-// Create the rainviewer control
-var rainviewerControl = L.control.rainviewer({ 
-    position: 'topright',
-    nextButtonText: '>',
-    playStopButtonText: 'Play/Stop',
-    prevButtonText: '<',
-    positionSliderLabelText: "Hour:",
-    opacitySliderLabelText: "Opacity:",
-    animationInterval: 500,
-    opacity: 0.5
-}).addTo(panelMap);
     
 
     L.control.zoom({
