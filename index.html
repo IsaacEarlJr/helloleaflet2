@@ -440,14 +440,14 @@ var overlayMaps = {
 
 
     //code for panal toggling
-    document.getElementById('collapse-button').addEventListener('click', function() {
+document.getElementById('collapse-button').addEventListener('click', function() {
     var contentPanel = document.getElementById('content-panel');
     if (contentPanel.classList.contains('closed')) {
         contentPanel.classList.remove('closed');
-        this.innerHTML = '<strong>Collapse</strong>'; // Change the button text to 'Collapse' and make it bold
+        this.innerHTML = 'Collapse'; // Change the button text to 'Collapse'
     } else {
         contentPanel.classList.add('closed');
-        this.innerHTML = '<strong>Expand</strong>'; // Change the button text to 'Expand' and make it bold
+        this.innerHTML = 'Expand'; // Change the button text to 'Expand'
     }
 });
 
