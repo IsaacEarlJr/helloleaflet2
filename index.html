@@ -130,6 +130,16 @@
             margin-right: 5px;
         }
 
+/*adding style to the settings button*/
+        #settings-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* White */
+    font-size: 1.2em;
+    margin-left: 10px; /* Add some space between the "Add Data" button and the "Settings" button */
+}
+
 
 
 </style>         <!--this action closes the stylesheet editior options-->
@@ -157,7 +167,10 @@
             <button id="add-data-button" title="Add Data">
                 <i class="fas fa-plus"></i>
             </button>
-
+            <button id="settings-button" title="Settings">
+                <i class="fas fa-cog"></i> <!-- common icon for settings, can replace -->
+            </button>
+        </div>
 
     <script>
     /*any variable or code must be inside a script bracket*/
