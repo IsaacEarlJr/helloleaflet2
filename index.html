@@ -299,29 +299,7 @@
         opacity: 0.5
     }).addTo(map);
 
-// Create a second, invisible map
-var controlMap = L.map('control-panel', {
-    center: [0, 0],
-    zoom: 0,
-    zoomControl: false,
-    attributionControl: false
-});
-controlMap.getContainer().style.visibility = 'hidden';
 
-// Create the rainviewer control
-var rainviewerControl = L.control.rainviewer({ 
-    position: 'topright',
-    nextButtonText: '>',
-    playStopButtonText: 'Play/Stop',
-    prevButtonText: '<',
-    positionSliderLabelText: "Hour:",
-    opacitySliderLabelText: "Opacity:",
-    animationInterval: 500,
-    opacity: 0.5
-}).addTo(controlMap);
-
-// Make the control's container visible
-rainviewerControl.getContainer().style.visibility = 'visible';
 
 
 
