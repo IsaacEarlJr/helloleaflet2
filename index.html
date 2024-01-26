@@ -64,6 +64,27 @@
 
 
 
+/*adding style to a search bar*/
+#search-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        #search-input {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+
+
+
 
 /*adding colord dots to the layer control*/
 
@@ -89,9 +110,16 @@
 
     <div id="map"></div> <!--div means "this is where the map is supposed to go"-->
     
+
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Search...">
+
+
     <script>
     /*any variable or code must be inside a script bracket*/
 
+
+ 
 
 
 
