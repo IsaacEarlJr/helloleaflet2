@@ -151,17 +151,25 @@
 /*adding style to the content panel*/
 
 #content-panel {
-    position: relative; /* Add this line */
-    /* other styles... */
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px; /* Adjust as needed */
+    height: 100%;
+    overflow: auto;
+    background-color: #00000079; /* Adjust as needed */
+    z-index: 1002; /* Add this line */
 }
+
 
 #collapse-button {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%) rotate(180deg);
+    right: 250px;
+    transform: translateY(-50%);
     writing-mode: vertical-lr;
-    z-index: 1003;
+    transform: rotate(180deg);
+    z-index: 1003; 
     /* other styles... */
 }
 
@@ -193,12 +201,13 @@
 
 
  <!--adding conents panel-->
- <div id="content-panel">
-    <!-- Content panel content... -->
-
     <!-- Collapse button -->
-    <button id="collapse-button">Collapse</button>
-</div>
+    <div id="content-panel">
+        <!-- Content panel content... -->
+    
+        <!-- Collapse button -->
+        <button id="collapse-button">Collapse</button>
+    </div>
 
 
 
