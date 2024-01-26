@@ -300,6 +300,34 @@
     }).addTo(map);
 
 
+
+
+// Create the rainviewer control in side control pabel
+var rainviewerControl = L.control.rainviewer({ 
+    position: 'topright',
+    nextButtonText: '>',
+    playStopButtonText: 'Play/Stop',
+    prevButtonText: '<',
+    positionSliderLabelText: "Hour:",
+    opacitySliderLabelText: "Opacity:",
+    animationInterval: 500,
+    opacity: 0.5
+}).addTo(map);
+
+// Wait for the control to be added to the map
+setTimeout(function() {
+    // Get the control's container
+    var container = rainviewerControl.getContainer();
+
+    // Remove the control from the map
+    map.removeControl(rainviewerControl);
+
+    // Add the control's container to the content panel
+    document.getElementById('content-panel').appendChild(container);
+}, 0);
+// Create the rainviewer control inside control panel
+
+
     L.control.zoom({
      position: 'bottomright'
 }).addTo(map);
