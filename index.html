@@ -179,7 +179,9 @@
 }
 
 
-
+.custom-layer-control {
+    margin-top: 96px; /* Adjust this value as needed */
+}
 
 
 
@@ -445,17 +447,15 @@ var polygonLayer0 = L.esri.featureLayer({
 
 // Add layer control
 var overlayMaps = {
-    "Recommended WEAs Likely Clear of Flight Paths": polygonLayer0,
-    "Most Likely Flight Paths": polygonLayer1,
-    "Recommended WEAs in Most Likely Flight Paths": polygonLayer2,
-    "Total WEAs as of 12/31/2023": polygonLayer3,
-    "Bird Sighting Hot Spots": polygonLayer4
-};
+        "Recommended WEAs Likely Clear of Flight Paths": polygonLayer0,
+        "Most Likely Flight Paths": polygonLayer1,
+        "Recommended WEAs in Most Likely Flight Paths": polygonLayer2,
+        "Total WEAs as of 12/31/2023": polygonLayer3,
+        "Bird Sighting Hot Spots": polygonLayer4
+    };
 
-var layerControl = L.control.layers(null, overlayMaps, { position: 'topleft', collapsed: true }).addTo(map);
-
-// Add a custom CSS class to the layer control
-L.DomUtil.addClass(layerControl.getContainer(), 'custom-layer-control');
+    L.control.layers(null, overlayMaps, { position: 'topleft', collapsed: true }).addTo(map);
+    L.DomUtil.addClass(layerControl.getContainer(), 'custom-layer-control');
 
     //code for panal toggling
 document.getElementById('collapse-button').addEventListener('click', function() {
