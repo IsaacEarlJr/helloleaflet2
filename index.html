@@ -441,7 +441,13 @@ var overlayMaps = {
     //code for panal toggling
     document.getElementById('collapse-button').addEventListener('click', function() {
     var contentPanel = document.getElementById('content-panel');
-    contentPanel.classList.toggle('closed');
+    if (contentPanel.classList.contains('closed')) {
+        contentPanel.classList.remove('closed');
+        this.innerHTML = 'Collapse'; // Change the button text to 'Collapse'
+    } else {
+        contentPanel.classList.add('closed');
+        this.innerHTML = 'Expand'; // Change the button text to 'Expand'
+    }
 });
 
     </script>
