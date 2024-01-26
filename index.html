@@ -25,6 +25,11 @@
 <!--this is leafletweather from mwasil-->
 
 
+ <!-- Add font library to html... -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
@@ -46,6 +51,11 @@
  <!-- this is ArcGISpacakge-->
 
 <!-- above; i had to add this library in order to add a satelittle layer-->
+
+
+
+
+
 
 <style>
 
@@ -82,6 +92,16 @@
             border-radius: 5px;
         }
 
+/*adding style to the add data button*/
+
+        #add-data-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* White */
+    font-size: 1.2em;
+}
+
 
 
 
@@ -113,11 +133,16 @@
 
     <div id="search-bar">
         <input type="text" id="search-input" placeholder="Search...">
-        <div id="custom-layer-control">
-            <input type="checkbox" id="toggle-openstreetmap" checked> OpenStreetMap
-            <input type="checkbox" id="toggle-esri"> Esri WorldImagery
-        </div>
-    </div>
+
+
+
+        /*adding a button to "add data"*/
+        <div id="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="add-data-button" title="Add Data">
+                <i class="fas fa-plus"></i>
+            </button>
+
 
     <script>
     /*any variable or code must be inside a script bracket*/
