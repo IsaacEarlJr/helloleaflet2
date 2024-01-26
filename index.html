@@ -209,6 +209,17 @@
     z-index: 1000;
 }
 
+
+.control-label {
+    position: absolute;
+    top: 0;
+    left: 30px; /* Adjust this value as needed */
+    font-size: 12px;
+    color: #000;
+}
+
+
+
 </style>         <!--this action closes the stylesheet editior options-->
 
 
@@ -475,6 +486,7 @@ document.getElementById('collapse-button').addEventListener('click', function() 
 
 
 // Define base maps
+// Define base maps
 var baseMaps = {
     "OpenStreetMap": OpenStreetMap,
     "Esri WorldImagery": Esri_WorldImagery,
@@ -484,6 +496,9 @@ var baseControl = L.control.layers(baseMaps, null, { position: 'topleft', collap
 
 // Add a custom CSS class to the base map control
 L.DomUtil.addClass(baseControl.getContainer(), 'custom-base-control');
+
+// Add a label to the base map control
+baseControl.getContainer().innerHTML += '<span class="control-label">Map Type</span>';
 
 // Add layer control
 var overlayMaps = {
