@@ -443,10 +443,10 @@ var overlayMaps = {
     var contentPanel = document.getElementById('content-panel');
     if (contentPanel.classList.contains('closed')) {
         contentPanel.classList.remove('closed');
-        this.innerHTML = 'Collapse'; // Change the button text to 'Collapse'
+        this.innerHTML = '<strong>Collapse</strong>'; // Change the button text to 'Collapse' and make it bold
     } else {
         contentPanel.classList.add('closed');
-        this.innerHTML = 'Expand'; // Change the button text to 'Expand'
+        this.innerHTML = '<strong>Expand</strong>'; // Change the button text to 'Expand' and make it bold
     }
 });
 
