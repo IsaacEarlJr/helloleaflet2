@@ -178,10 +178,10 @@
     overflow: hidden;
 }
 
-
 .custom-layer-control {
-    margin-top: 200px; /* Adjust this value as needed */
+    margin-top: 96px; /* Adjust this value as needed */
 }
+
 
 
 
@@ -454,8 +454,10 @@ var overlayMaps = {
         "Bird Sighting Hot Spots": polygonLayer4
     };
 
-    L.control.layers(null, overlayMaps, { position: 'topleft', collapsed: true }).addTo(map);
-    L.DomUtil.addClass(layerControl.getContainer(), 'custom-layer-control');
+    var layerControl = L.control.layers(null, overlayMaps, { position: 'topleft', collapsed: true }).addTo(map);
+
+// Add a custom CSS class to the layer control
+L.DomUtil.addClass(layerControl.getContainer(), 'custom-layer-control');
 
     //code for panal toggling
 document.getElementById('collapse-button').addEventListener('click', function() {
