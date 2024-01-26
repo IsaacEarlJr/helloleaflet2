@@ -340,29 +340,6 @@
 
 
 
-// Create the rainviewer control
-var rainviewerControl = L.control.rainviewer({ 
-    position: 'topleft',
-    nextButtonText: '>',
-    playStopButtonText: 'Play/Stop',
-    prevButtonText: '<',
-    positionSliderLabelText: "Hour:",
-    opacitySliderLabelText: "Opacity:",
-    animationInterval: 500,
-    opacity: 0.5
-}).addTo(map);
-
-// Wait for the control to be added to the map
-setTimeout(function() {
-    // Get the control's container
-    var container = rainviewerControl.getContainer();
-
-    // Adjust the position of the control
-    container.style.position = 'relative';
-    container.style.top = '50px'; // Adjust this value as needed
-}, 0);
-
-
 
 
 
