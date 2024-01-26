@@ -299,7 +299,17 @@
         opacity: 0.5
     }).addTo(map);
 
-    var rainviewerControl = L.control.rainviewer({ 
+// Create a second, invisible map
+var controlMap = L.map('control-panel', {
+    center: [0, 0],
+    zoom: 0,
+    zoomControl: false,
+    attributionControl: false
+});
+controlMap.getContainer().style.visibility = 'hidden';
+
+// Create the rainviewer control
+var rainviewerControl = L.control.rainviewer({ 
     position: 'topright',
     nextButtonText: '>',
     playStopButtonText: 'Play/Stop',
@@ -308,19 +318,10 @@
     opacitySliderLabelText: "Opacity:",
     animationInterval: 500,
     opacity: 0.5
-}).addTo(map);
+}).addTo(controlMap);
 
-// Wait for the control to be added to the map
-setTimeout(function() {
-    // Get the control's container
-    var container = rainviewerControl.getContainer();
-
-    // Remove the control from the map
-    map.removeControl(rainviewerControl);
-
-    // Add the control's container to the content panel
-    document.getElementById('content-panel').appendChild(container);
-}, 0);
+// Make the control's container visible
+rainviewerControl.getContainer().style.visibility = 'visible';
 
 
 
