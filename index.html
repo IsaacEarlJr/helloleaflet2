@@ -179,7 +179,23 @@
 }
 
 
+.custom-base-control {
+    position: absolute;
+    top: 50px; /* Adjust this value as needed */
+    left: 0;
+}
 
+.custom-layer-control {
+    position: absolute;
+    top: 50px; /* Adjust this value as needed */
+    left: 200px; /* Adjust this value as needed */
+}
+
+.custom-rainviewer-control {
+    position: absolute;
+    top: 50px; /* Adjust this value as needed */
+    left: 400px; /* Adjust this value as needed */
+}
 
 
 
@@ -277,6 +293,7 @@
 
 
 //i should be able to erase whats below this line to get back the map i had before
+
 
 
 
@@ -467,6 +484,48 @@ document.getElementById('collapse-button').addEventListener('click', function() 
         this.innerHTML = 'Expand'; // Change the button text to 'Expand'
     }
 });
+
+
+
+// Define base maps
+var baseMaps = {
+    "OpenStreetMap": OpenStreetMap,
+    "Esri WorldImagery": Esri_WorldImagery,
+};
+
+var baseControl = L.control.layers(baseMaps, null, { position: 'topleft', collapsed: true }).addTo(map);
+
+// Add a custom CSS class to the base map control
+L.DomUtil.addClass(baseControl.getContainer(), 'custom-base-control');
+
+// Add layer control
+var overlayMaps = {
+    "Recommended WEAs Likely Clear of Flight Paths": polygonLayer0,
+    "Most Likely Flight Paths": polygonLayer1,
+    "Recommended WEAs in Most Likely Flight Paths": polygonLayer2,
+    "Total WEAs as of 12/31/2023": polygonLayer3,
+    "Bird Sighting Hot Spots": polygonLayer4
+};
+
+var layerControl = L.control.layers(null, overlayMaps, { position: 'topleft', collapsed: true }).addTo(map);
+
+// Add a custom CSS class to the layer control
+L.DomUtil.addClass(layerControl.getContainer(), 'custom-layer-control');
+
+// Create the rainviewer control
+var rainviewerControl = L.control.rainviewer({ 
+    position: 'topleft',
+    nextButtonText: '>',
+    playStopButtonText: 'Play/Stop',
+    prevButtonText: '<',
+    positionSliderLabelText: "Hour:",
+    opacitySliderLabelText: "Opacity:",
+    animationInterval: 500,
+    opacity: 0.5
+}).addTo(map);
+
+// Add a custom CSS class to the rainviewer control
+L.DomUtil.addClass(rainviewerControl.getContainer(), 'custom-rainviewer-control');
 
     </script>
 
