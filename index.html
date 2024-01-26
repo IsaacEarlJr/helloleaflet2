@@ -206,11 +206,20 @@
 }
 
 .leaflet-control-layers:hover {
-    z-index: 10000;
+    z-index: 1000;   /* Changing the location of toggles to fit below search bar */
 }
 
 
-
+.custom-base-control::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('path/to/your/icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
 
 
 
