@@ -300,7 +300,12 @@
 
 
  
-
+    var map = L.map('map', {
+        center: [28.5000, -90.6000],
+        zoom: 6.5,
+        zoomControl: false, 
+        layers: [OpenStreetMap]
+    });
 
 
     // Define OpenStreetMap base map
@@ -316,12 +321,7 @@
 
 
     // Initialize the map with OpenStreetMap as the base map
-    var map = L.map('map', {
-        center: [28.5000, -90.6000],
-        zoom: 6.5,
-        zoomControl: false, 
-        layers: [OpenStreetMap]
-    });
+
 
     // Add a layer switcher control
     var baseMaps = {
