@@ -567,7 +567,21 @@ var rainviewerControl = L.control.rainviewer({
 // Add a custom CSS class to the rainviewer control
 L.DomUtil.addClass(rainviewerControl.getContainer(), 'custom-rainviewer-control');
 
-    </script>
+   
+polygonLayer0.on('click', function(e) {
+    // Get the properties of the clicked polygon
+    var properties = e.layer.feature.properties;
+
+    // Convert the properties object to a string
+    var propertiesString = JSON.stringify(properties, null, 2);
+
+    // Display the properties in the contents-Panel
+    document.getElementById('content-panel').textContent = propertiesString;
+});
+   
+   
+   
+   </script>
 
     </body>
 
