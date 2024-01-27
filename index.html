@@ -147,6 +147,15 @@
     margin-right: 50px; /* Add some space between the "Add Data" button and the "Settings" button */
 }
 
+#info-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* White */
+    font-size: 1.2em;
+    
+}
+
 
 /*adding style to the content panel*/
 
@@ -211,6 +220,7 @@
 
 
 
+
 /*.custom-base-control::before {
     content: "";
     display: inline-block;
@@ -263,12 +273,19 @@
         <div id="search-bar">
             <a id="uf-hull" href="http://www.globalhumanwildlifelab.com/">HULL LAB</a>
             <input type="text" id="search-input" placeholder="Search...">
+           
             <button id="add-data-button" title="Add Data">
                 <i class="fas fa-plus"></i>
             </button>
+
+            <button id="info-button">Info</button>
+            <i class="fas fa-info-circle"></i>
+            </button>
+
             <button id="settings-button" title="Settings">
                 <i class="fas fa-cog"></i> <!-- common icon for settings, can replace -->
             </button>
+            
         </div>
 
 
@@ -490,6 +507,10 @@ var overlayMaps = {
     });
 };
 
+
+document.getElementById('info-button').addEventListener('click', function() {
+    // Handle the click event here
+});
 
 
 // Define base maps
