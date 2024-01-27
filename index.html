@@ -442,11 +442,22 @@ myPositionMarker.on("click", function() {
 });
 
 var polygonLayer0 = L.esri.featureLayer({
-        url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/0",
-        style: function() {
-            return { color: "#ffff00" }; // Yellow
-        }
-    });
+    url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/Gulf_Lease_Updated2/FeatureServer/0",
+    style: function() {
+        return { color: "#ffff00" }; // Yellow
+    }
+}).addTo(map);
+
+polygonLayer0.on('click', function(e) {
+    // Get the properties of the clicked polygon
+    var properties = e.layer.feature.properties;
+
+    // Convert the properties object to a string
+    var propertiesString = JSON.stringify(properties, null, 2);
+
+    // Display the properties in the contentPanel
+    document.getElementById('content-Panel').textContent = propertiesString;
+});
 
 
     var polygonLayer1 = L.esri.featureLayer({
