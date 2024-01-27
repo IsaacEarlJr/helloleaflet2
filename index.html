@@ -315,22 +315,13 @@
     });
 
 
-    
-
     // Initialize the map with OpenStreetMap as the base map
     var map = L.map('map', {
-    zoomControl: false, 
-    layers: [OpenStreetMap]
-});
-
-// Define the geographical bounds
-var bounds = [[23.5, -97.87216], [34, -84.0]];
-
-// Adjust the map's view to fit the bounds
-map.fitBounds(bounds);
-
-
-
+        center: [28.5000, -90.6000],
+        zoom: 6.5,
+        zoomControl: false, 
+        layers: [OpenStreetMap]
+    });
 
     // Add a layer switcher control
     var baseMaps = {
