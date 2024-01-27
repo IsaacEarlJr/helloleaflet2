@@ -568,19 +568,30 @@ var rainviewerControl = L.control.rainviewer({
 L.DomUtil.addClass(rainviewerControl.getContainer(), 'custom-rainviewer-control');
 
    
-polygonLayer0.on('click', function(e) {
-    // Get the properties of the clicked polygon
-    var properties = e.layer.feature.properties;
+function addClickListenerToLayer(layer) {
+    layer.on('click', function(e) {
+        // Get the properties of the clicked polygon
+        var properties = e.layer.feature.properties;
 
-    // Convert the properties object to a string
-    var propertiesString = JSON.stringify(properties, null, 2);
+        // Convert the properties object to a string
+        var propertiesString = JSON.stringify(properties, null, 2);
 
-    // Display the properties in the contents-Panel
-    document.getElementById('content-panel').textContent = propertiesString;
-});
-   
-   
-   
+        // Display the properties in the contents-Panel
+        document.getElementById('content-panel').textContent = propertiesString;
+    });
+}
+
+// Add the click listener to polygonLayer0
+addClickListenerToLayer(polygonLayer0);
+addClickListenerToLayer(polygonLayer1);
+addClickListenerToLayer(polygonLayer2);
+addClickListenerToLayer(polygonLayer3);
+addClickListenerToLayer(polygonLayer4);
+
+// Add the click listener to other polygon layers
+// addClickListenerToLayer(polygonLayer1);
+// addClickListenerToLayer(polygonLayer2);
+// etc.
    </script>
 
     </body>
