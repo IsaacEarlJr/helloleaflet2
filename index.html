@@ -282,9 +282,7 @@
 
 
  
-    window.onload = function() {
-    document.getElementById('content-panel').click();
-};
+
 
 
     // Define OpenStreetMap base map
@@ -477,16 +475,20 @@ var overlayMaps = {
 
 
     //code for panal toggling
-document.getElementById('collapse-button').addEventListener('click', function() {
+    window.onload = function() {
     var contentPanel = document.getElementById('content-panel');
-    if (contentPanel.classList.contains('closed')) {
-        contentPanel.classList.remove('closed');
-        this.innerHTML = '◄'; // Change the button text to '◄'
-    } else {
-        contentPanel.classList.add('closed');
-        this.innerHTML = '►'; // Change the button text to '►'
-    }
-});
+    contentPanel.classList.add('closed');
+
+    document.getElementById('collapse-button').addEventListener('click', function() {
+        if (contentPanel.classList.contains('closed')) {
+            contentPanel.classList.remove('closed');
+            this.innerHTML = '◄'; // Change the button text to '◄'
+        } else {
+            contentPanel.classList.add('closed');
+            this.innerHTML = '►'; // Change the button text to '►'
+        }
+    });
+};
 
 
 
