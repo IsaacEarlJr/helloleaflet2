@@ -492,6 +492,22 @@ var overlayMaps = {
 
 
 
+
+//this is the code for clicking polygons and getting the attributes to show up in the content panel
+// this is Assuming my map is my Leaflet map and 'polygonLayer' is your polygon layer
+polygonLayer0.on('click', function(e) {
+    // Get the properties of the clicked polygon
+    var properties = e.layer.feature.properties;
+
+    // Convert the properties object to a string
+    var propertiesString = JSON.stringify(properties, null, 2);
+
+    // Display the properties in the contentPanel
+    document.getElementById('contentPanel').textContent = propertiesString;
+});
+
+
+
     //code for panel toggling
     window.onload = function() {
     var contentPanel = document.getElementById('content-panel');
@@ -507,6 +523,8 @@ var overlayMaps = {
         }
     });
 };
+
+
 
 
 //popup window code, with text and formamting
