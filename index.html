@@ -291,7 +291,10 @@
         </div>
 
 
-
+        <div id="content-panel">
+            <button id="clear-data-button">Clear Data</button>
+            <div id="data-display"></div>
+        </div>
 
 
 
@@ -568,6 +571,10 @@ var rainviewerControl = L.control.rainviewer({
 L.DomUtil.addClass(rainviewerControl.getContainer(), 'custom-rainviewer-control');
 
    
+document.getElementById('clear-data-button').addEventListener('click', function() {
+    document.getElementById('data-display').innerHTML = '';
+});
+
 function addClickListenerToLayer(layer) {
     layer.on('click', function(e) {
         // Get the properties of the clicked polygon
@@ -581,8 +588,8 @@ function addClickListenerToLayer(layer) {
             propertiesString += '<p><strong>' + key + ':</strong> ' + properties[key] + '</p>';
         }
 
-        // Display the properties in the contents-Panel
-        document.getElementById('content-panel').innerHTML = propertiesString;
+        // Display the properties in the data-display
+        document.getElementById('data-display').innerHTML = propertiesString;
     });
 }
 
