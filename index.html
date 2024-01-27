@@ -509,8 +509,9 @@ var overlayMaps = {
 };
 
 
-document.getElementById('info-button').addEventListener('click', function() {
-    // Handle the click event here
+document.getElementById('info-button').addEventListener('click', function() { //this is the click event for the info button
+    var popupWindow = window.open("", "Popup Window", "width=600,height=600"); //this is the size of the popup window
+    popupWindow.document.write("<p>Your prepared text goes here.</p>");      //this is the text that will appear in the popup window
 });
 
 
