@@ -210,6 +210,25 @@
 }
 
 
+
+/* Hide the existing text */
+.leaflet-control-layers-toggle {
+    font-size: 0;
+}
+
+/* Add an arrow icon for the expanded state */
+.leaflet-control-layers-expanded .leaflet-control-layers-toggle::before {
+    content: "▼"; /* Down arrow */
+    font-size: 16px;
+}
+
+/* Add an arrow icon for the collapsed state */
+.leaflet-control-layers-collapsed .leaflet-control-layers-toggle::before {
+    content: "►"; /* Right arrow */
+    font-size: 16px;
+}
+
+
 /*.custom-base-control::before {
     content: "";
     display: inline-block;
