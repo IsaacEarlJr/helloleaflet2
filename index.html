@@ -573,11 +573,16 @@ function addClickListenerToLayer(layer) {
         // Get the properties of the clicked polygon
         var properties = e.layer.feature.properties;
 
-        // Convert the properties object to a string
-        var propertiesString = JSON.stringify(properties, null, 2);
+        // Start the propertiesString with an empty string
+        var propertiesString = '';
+
+        // Loop through each property and add it to propertiesString with HTML formatting
+        for (var key in properties) {
+            propertiesString += '<p><strong>' + key + ':</strong> ' + properties[key] + '</p>';
+        }
 
         // Display the properties in the contents-Panel
-        document.getElementById('content-panel').textContent = propertiesString;
+        document.getElementById('content-panel').innerHTML = propertiesString;
     });
 }
 
