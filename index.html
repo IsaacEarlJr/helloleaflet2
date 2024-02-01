@@ -608,6 +608,19 @@ addClickListenerToLayer(polygonLayer4);
 // addClickListenerToLayer(polygonLayer1);
 // addClickListenerToLayer(polygonLayer2);
 // etc.
+   
+ 
+
+document.getElementById('settings-button').addEventListener('click', function() {
+    var dropdown = document.getElementById('dropdown');
+    if (dropdown.style.display === 'none') {
+        dropdown.style.display = 'block';
+    } else {
+        dropdown.style.display = 'none';
+    }
+});
+   
+   
    </script>
 
     </body>
