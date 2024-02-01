@@ -589,8 +589,7 @@ document.getElementById('clear-data-button').addEventListener('click', function(
 
 function addClickListenerToLayer(layer) {
     layer.on('click', function(e) {
-        document.getElementById('content-panel').style.display = 'block';
-
+        
         // Get the properties of the clicked polygon
         var properties = e.layer.feature.properties;
 
