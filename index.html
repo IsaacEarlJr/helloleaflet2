@@ -590,9 +590,6 @@ document.getElementById('clear-data-button').addEventListener('click', function(
 function addClickListenerToLayer(layer) {
     layer.on('click', function(e) {
         
-       // Open the content-panel
-    document.getElementById('content-panel').style.display = 'block';
-
        
         // Get the properties of the clicked polygon
         var properties = e.layer.feature.properties;
@@ -607,6 +604,10 @@ function addClickListenerToLayer(layer) {
 
         // Display the properties in the data-display
         document.getElementById('data-display').innerHTML = propertiesString;
+   
+        document.getElementById('content-panel').style.display = 'block';
+  
+   
     });
 }
 
