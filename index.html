@@ -617,16 +617,18 @@ addClickListenerToLayer(polygonLayer4);
 // addClickListenerToLayer(polygonLayer2);
 // etc.
    
-var openContentPanel = function() {
-    document.getElementById('content-panel').style.display = 'block';  //click listen to open content panel when data clicked
-};
 
-polygonLayer0.on('click', openContentPanel);
-polygonLayer1.on('click', openContentPanel);   
-polygonLayer2.on('click', openContentPanel);
-polygonLayer3.on('click', openContentPanel);
-polygonLayer4.on('click', openContentPanel); 
+function addClickListenerToLayer(layer) {
+    layer.on('click', function() {
+        document.getElementById('content-panel').style.display = 'block';
+    });
+}
 
+addClickListenerToLayer(polygonLayer4);
+// Add the click listener to other polygon layers
+// addClickListenerToLayer(polygonLayer1);
+// addClickListenerToLayer(polygonLayer2);
+// etc.
 
 
 document.getElementById('settings-button').addEventListener('click', function() {
