@@ -620,11 +620,11 @@ addClickListenerToLayer(polygonLayer4);
 
 function addClickListenerToLayer(layer) {
     layer.on('click', function() {
-        document.getElementById('content-panel').style.display = 'block';
+        openContentPanel();
     });
 }
 
-addClickListenerToLayer(polygonLayer4);
+addClickListenerToLayer(polygonLayer0);
 // Add the click listener to other polygon layers
 // addClickListenerToLayer(polygonLayer1);
 // addClickListenerToLayer(polygonLayer2);
