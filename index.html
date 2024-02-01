@@ -301,7 +301,9 @@
                     </select>
                 </div>
         
-        </div>
+        
+        
+            </div>
 
 
     
@@ -615,7 +617,17 @@ addClickListenerToLayer(polygonLayer4);
 // addClickListenerToLayer(polygonLayer2);
 // etc.
    
- 
+var openContentPanel = function() {
+    document.getElementById('content-panel').style.display = 'block';  //click listen to open content panel when data clicked
+};
+
+polygonLayer0.on('click', openContentPanel);
+polygonLayer1.on('click', openContentPanel);   
+polygonLayer2.on('click', openContentPanel);
+polygonLayer3.on('click', openContentPanel);
+polygonLayer4.on('click', openContentPanel); 
+
+
 
 document.getElementById('settings-button').addEventListener('click', function() {
     var dropdown = document.getElementById('dropdown');
