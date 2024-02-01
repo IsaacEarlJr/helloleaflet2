@@ -291,8 +291,9 @@
                 <button id="settings-button" title="Settings">
                     <i class="fas fa-cog"></i> <!-- common icon for settings, can replace -->
                 </button>
-            
+            <!-- Dropdown content -->
                 <div id="dropdown" style="display: none; position: absolute; top: 150%; left: -96px;">
+                    <button id="exit-button" style="position: absolute; right: 0;">X</button>
                     <select id="settings-options">
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
@@ -618,14 +619,18 @@ addClickListenerToLayer(polygonLayer4);
 
 document.getElementById('settings-button').addEventListener('click', function() {
     var dropdown = document.getElementById('dropdown');
-    if (dropdown.style.display === 'none') {
+    if (dropdown.style.display === 'none') { // dropdown info
         dropdown.style.display = 'block';
     } else {
         dropdown.style.display = 'none';
     }
 });
    
-   
+
+document.getElementById('exit-button').addEventListener('click', function() {
+    document.getElementById('dropdown').style.display = 'none';  // Hide the dropdown button
+});
+
    </script>
 
     </body>
