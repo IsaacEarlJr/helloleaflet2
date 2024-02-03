@@ -636,7 +636,7 @@ function addClickListenerToLayer(layer) {
         // Loop through each property and add it to propertiesString with HTML formatting
         for (var key in properties) {
     propertiesString += '<div class="property-box"><p><strong>' + key + ':</strong> ' + properties[key] + '</p>';
-    propertiesString += '<div class="box"></div><div class="box"></div><div class="box"></div></div>';   //this line alone adds 3 property boxes. I can always add more
+    propertiesString += '<div class="box-container"><div class="box"></div><div class="box"></div><div class="box"></div></div></div>';   //this line alone adds 3 property boxes. I can always add more
 }
 
         // Display the properties in the data-display
