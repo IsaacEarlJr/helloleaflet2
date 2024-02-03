@@ -221,7 +221,6 @@
 }
 
 
-
 .property-box {
     border: 1px solid #ccc;
     padding: 10px;
@@ -229,6 +228,7 @@
     border-radius: 5px;
     background-color: #f9f9f9;
 }
+
 
 
 /*.custom-base-control::before {
@@ -606,8 +606,8 @@ function addClickListenerToLayer(layer) {
 
         // Loop through each property and add it to propertiesString with HTML formatting
         for (var key in properties) {
-            propertiesString += '<p><strong>' + key + ':</strong> ' + properties[key] + '</p>';
-        }
+    propertiesString += '<div class="property-box"><p><strong>' + key + ':</strong> ' + properties[key] + '</p></div>';
+}
 
         // Display the properties in the data-display
         document.getElementById('data-display').innerHTML = propertiesString;
@@ -652,9 +652,7 @@ document.getElementById('exit-button').addEventListener('click', function() {
 });
 
 
-for (var key in properties) {
-    propertiesString += '<div class="property-box"><p><strong>' + key + ':</strong> ' + properties[key] + '</p></div>';
-}
+
 
    </script>
 
