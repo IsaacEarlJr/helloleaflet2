@@ -238,14 +238,17 @@
 }
 
 
+
+
+/* lines 243-254 are the boxes that show up next to the words inside the contents paine */  
 .property-box {
     display: flex;
     align-items: center;
 }
 
 .box {
-    width: 20px;  /* Adjust to your desired width */
-    height: 20px;  /* Adjust to your desired height */
+    width: 10px;  /* Adjust to your desired width */
+    height: 10px;  /* Adjust to your desired height */
     border: 1px solid #ccc;
     margin-left: 10px;
 }
@@ -627,7 +630,7 @@ function addClickListenerToLayer(layer) {
         // Loop through each property and add it to propertiesString with HTML formatting
         for (var key in properties) {
     propertiesString += '<div class="property-box"><p><strong>' + key + ':</strong> ' + properties[key] + '</p>';
-    propertiesString += '<div class="box"></div><div class="box"></div><div class="box"></div></div>';
+    propertiesString += '<div class="box"></div><div class="box"></div><div class="box"></div></div>';   //this line alone adds 3 property boxes. I can always add more
 }
 
         // Display the properties in the data-display
