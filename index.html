@@ -60,7 +60,7 @@
 
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--this is the sweetalert2 library/ for my popup to say we have moved-->
 
 
 <style>
@@ -694,7 +694,14 @@ document.getElementById('exit-button').addEventListener('click', function() {
 });
 
 
-
+window.onload = function() {
+    Swal.fire({
+        title: 'CONGRATS!',
+        text: 'You were one of the first to experience this site. We want to make this the best experience ever, so we have moved this site to another link. If you know Isaac, ask him for the new link. All others have found this by happenstance and possibly know of the new link. COOL BEANS, YEAH!!',
+        confirmButtonText: 'Close'
+    });
+    // Other code...
+}
 
    </script>
 
