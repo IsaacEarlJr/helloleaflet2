@@ -401,7 +401,16 @@
     /*any variable or code must be inside a script bracket*/
 
 
- 
+    window.onload = function() {
+    var modal = document.getElementById('popup-modal');
+    var closeButton = document.getElementsByClassName('close-button')[0];
+
+    modal.style.display = 'block';
+
+    closeButton.onclick = function() {
+        modal.style.display = 'none';
+    }
+}
 
 
 
@@ -736,22 +745,13 @@ document.getElementById('exit-button').addEventListener('click', function() {
 
 
 
-window.onload = function() {
-    var modal = document.getElementById('popup-modal');
-    var closeButton = document.getElementsByClassName('close-button')[0];
-
-    modal.style.display = 'block';
-
-    closeButton.onclick = function() {
-        modal.style.display = 'none';
-    }
-}
 
 
-window.onload = function() {
-    document.getElementById('content-panel').style.display = 'none';
-    // Other code...
-}
+
+// window.onload = function() {
+//     document.getElementById('content-panel').style.display = 'none';
+//     // Other code...
+// }
 
    </script>
 
